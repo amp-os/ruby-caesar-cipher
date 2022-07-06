@@ -1,5 +1,5 @@
 def caesar_cipher(string, shift)
-    encoded = ""
+    result = ""
     string.each_char do |char|
         if (char.between?("a", "z") || char.between?("A", "Z"))
             code = char.ord
@@ -7,9 +7,9 @@ def caesar_cipher(string, shift)
             code = ((code - char_shift_offset + shift) % 26) + char_shift_offset
             char = code.chr
         end
-        encoded += char
+        result += char
     end
-    encoded
+    result
 end
 
 puts caesar_cipher("dCode Caesar", -166)
