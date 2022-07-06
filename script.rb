@@ -1,14 +1,15 @@
 def caesar_cipher(string, shift)
     encoded = ""
     string.each_char do |char|
-        num = char.ord
         if (char.between?("a", "z") || char.between?("A", "Z"))
+            code = char.ord
             puts char.ord
-            num += shift
-            puts num
+            code += shift
+            puts code
+            char = code.chr
         end
-        encoded += num.chr
-        puts num.chr
+        encoded += char
+        puts char
     end
     encoded
 end
