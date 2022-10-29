@@ -36,4 +36,14 @@ describe "#caeser_cipher" do
       expect(caesar_cipher("dCode Caesar", -166)).to eql("tSetu Squiqh")
     end
   end
+
+  describe "ignore non alphabetic values" do
+    it "does not shift numbers" do
+      expect(caesar_cipher("a1b9", 2)).to eql("c1d9")
+    end
+
+    it "does not shift punctuation" do
+      expect(caesar_cipher("hello?", 1)).to eql("ifmmp?")
+    end
+  end
 end
